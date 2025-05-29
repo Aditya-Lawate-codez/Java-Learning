@@ -1,28 +1,39 @@
 import java.time.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Student {
-    int studentID;
-    String name;
-    String email;
-    LocalDate dateOfBirth;
-    Department dept;
-    List<Course> enrolledCourse;
+    private String studentId;
+    private String name;
+    private String email ;
+    private String phone;
+    private LocalDate dateOfBirth;
+    private Department department;
+    private List<Course> enrolledCourses;
 
     public void enrollInCourse(Course course) {
-        this.enrolledCourse.add(course);
+        this.enrolledCourses.add(course);
     }
 
     public void dropCourse(Course course) {
-        this.enrolledCourse.remove(course);
+        this.enrolledCourses.remove(course);
     }
 
     public List<Course> viewEnrolledCourses() {
-        return this.enrolledCourse;
+        return this.enrolledCourses;
     }
 
     public String getStudentDetails() {
-        return this.studentID + " " + this.name + " " + this.email + " " + this.dept;
+        return this.studentId + " " + this.name + " " + this.email + " " + this.department;
     }
 
+    public Student(String studentId, String name, String email, String phone, LocalDate dateOfBirth, Department department) {
+        this.studentId = studentId;
+        this.name = name;
+        this.email = email;
+        this.phone = phone;
+        this.dateOfBirth = dateOfBirth;
+        this.department = department;
+        this.enrolledCourses = new ArrayList<>();
+    }
 }

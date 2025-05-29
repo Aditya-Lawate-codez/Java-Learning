@@ -1,11 +1,11 @@
-import java.util.List;
+import java.util.*;
 
 public class Department {
-    String deptID, deptName;
-    Faculty HeadOfDepartment;
-    List<Course> coursesOffered;
-    List<Student> students;
-    List<Faculty> facultyList;
+    private String deptID, deptName;
+    private Faculty HeadOfDepartment;
+    private List<Course> coursesOffered;
+    private List<Student> students;
+    private List<Faculty> facultyList;
 
     public void addCourse(Course course) {
         this.coursesOffered.add(course);
@@ -24,6 +24,17 @@ public class Department {
     }
 
     public String getDeptDetails() {
-        String k = this.deptName + " " + this.HeadOfDepartment + " " + (this.coursesOffered);
+        return this.deptName + " " + this.HeadOfDepartment + " " + (this.coursesOffered);
     }
+    public List<Course> getCoursesOffered() {
+        return this.coursesOffered;
+    }
+    public Department(String deptID, String deptName) {
+        this.deptID = deptID;
+        this.deptName = deptName;
+        this.coursesOffered = new ArrayList<>();
+        this.students = new ArrayList<>();
+        this.facultyList = new ArrayList<>();
+    }
+
 }
