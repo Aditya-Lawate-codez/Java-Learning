@@ -8,18 +8,21 @@ public class Student {
     LocalDate dateOfBirth;
     Department dept;
     List<Course> enrolledCourse;
-    public void enrollInCourse(Course course){
+
+    public void enrollInCourse(Course course) {
         this.enrolledCourse.add(course);
     }
-    public void dropCourse(Course course){
+
+    public void dropCourse(Course course) {
         this.enrolledCourse.remove(course);
     }
-    public List<Course> viewEnrolledCourses(){
+
+    public List<Course> viewEnrolledCourses() {
         return this.enrolledCourse;
     }
-    public String getStudentDetails(){
-        String s = new String(this.studentID + " " + this.name + " " + this.email + " " + this.dept);
-        return s;
+
+    public String getStudentDetails() {
+        return this.studentID + " " + this.name + " " + this.email + " " + this.dept;
     }
 
 }
